@@ -1,0 +1,41 @@
+name: "CouchDB"
+version: "1.0.0"
+slug: "couchdb"
+description: "Apache CouchDB server using the official Docker image"
+
+arch:
+  - amd64
+  - aarch64
+  - armv7
+  - armhf
+
+startup: "services"
+boot: "auto"
+
+# Пробрасываем порт CouchDB
+ports:
+  "5984/tcp": 5984
+
+# Монтируем папку для хранения данных
+map:
+  - type: "volume"
+    source: "data"
+    target: "/opt/couchdb/data"
+
+options:
+  admin_user: "admin"
+  admin_password: "password"
+  image_tag: "latest"
+
+schema:
+  admin_user: str
+  admin_password: str
+  image_tag: str
+
+environment:
+  # Переменные окружения, которые CouchDB ожидает
+  COUCHDB_USER: "{{ options.admin_user }}"
+  COUCHDB_PASSWORD: "{{ options.admin_password }}"
+  # Не указываем путь данных, image берет /opt/couchdb/data как дефолт
+
+image: "couchdb:{{ options.image_tag }}"
