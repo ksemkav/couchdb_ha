@@ -1,0 +1,27 @@
+name: "CouchDB"
+version: "1.0.0"
+slug: "couchdb"
+description: "Apache CouchDB - A database for the web"
+
+arch:
+  - amd64
+  - aarch64
+  - armv7
+
+startup: "services"
+boot: "auto"
+
+ports:
+  5984/tcp: 5984
+
+map:
+  - type: data
+    path: /opt/couchdb/data
+
+options:
+  admin_user: "admin"
+  admin_password: "changeme"
+
+schema:
+  admin_user: str
+  admin_password: password
