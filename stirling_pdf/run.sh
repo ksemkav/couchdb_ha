@@ -8,7 +8,7 @@ else
 fi
 
 # Configure for Home Assistant ingress
-export SECURITY_CSRFDISABLED=false
+#export SECURITY_CSRFDISABLED=false
 export CORS_ALLOWEDORIGINS=https://home.kononchuk.me
 
 exec java -Dfile.encoding=UTF-8 -jar /app.jar
