@@ -1,6 +1,6 @@
 #!/bin/sh
 
-exec java -Dfile.encoding=UTF-8 \
-    -SECURITY_ENABLELOGIN=true \
-    -DISABLE_ADDITIONAL_FEATURES=false \
-    -jar /app.jar
+export SECURITY_ENABLELOGIN=true
+export DISABLE_ADDITIONAL_FEATURES=false
+
+exec java -Dfile.encoding=UTF-8 -jar /app.jar

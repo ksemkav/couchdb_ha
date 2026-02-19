@@ -1,5 +1,5 @@
 # See https://docs.stirlingpdf.com/#-docker-deployment
-FROM stirlingtools/stirling-pdf:latest-ultra-lite
+FROM stirlingtools/stirling-pdf:latest
 
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
