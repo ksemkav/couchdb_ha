@@ -1,5 +1,5 @@
 name: "Stirling PDF"
-version: "1.0.0"
+version: "1.0.1"
 slug: "stirling_pdf"
 description: "Locally hosted PDF editor application."
 arch:
@@ -8,6 +8,9 @@ arch:
   - armv7
 startup: application
 boot: auto
+ingress: true
+ingress_port: 8085
+panel_icon: mdi:file-pdf-box
 ports:
   8080/tcp: 8085
 map:
