@@ -1,7 +1,13 @@
 #!/bin/sh
 
+# Get the ingress path from Home Assistant
+if [ -n "$INGRESS_ENTRY" ]; then
+    export SYSTEM_ROOTURIPATH="$INGRESS_ENTRY"
+else
+    export SYSTEM_ROOTURIPATH=/
+fi
+
 # Configure for Home Assistant ingress
-export SYSTEM_ROOTURIPATH=/
 export SECURITY_CSRFDISABLED=false
 export CORS_ALLOWEDORIGINS=https://home.kononchuk.me
 
