@@ -7,3 +7,5 @@
 This repository contains the following add-ons
 
 ### [Couch DB](./couchdb)
+
+### [Stirling PDF](./stirling_pdf)
