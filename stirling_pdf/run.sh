@@ -1,11 +1,6 @@
 #!/bin/sh
 
-# Get the ingress path from Home Assistant
-CONTEXT_PATH="${INGRESS_ENTRY:-/}"
+# Configure for Home Assistant ingress using Stirling PDF environment variables
+export SYSTEM_ROOTURIPATH="${INGRESS_ENTRY:-/}"
 
-# Start Stirling PDF with proper Spring Boot configuration for ingress
-exec java -Dfile.encoding=UTF-8 \
-    -Dserver.servlet.context-path="$CONTEXT_PATH" \
-    -Dserver.forward-headers-strategy=framework \
-    -Dserver.use-forward-headers=true \
-    -jar /app.jar
+exec java -Dfile.encoding=UTF-8 -jar /app.jar
